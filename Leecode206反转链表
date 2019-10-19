@@ -16,8 +16,6 @@
 #         self.val = x
 #         self.next = None
 
-#第一种解法
-
 class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
         #head是一个链表的头指针，根据head可以依次找到整个链表的元素，所以head可以代表一个链表
@@ -32,5 +30,9 @@ class Solution:
             cur=temp
         return prev
         
+        
+        
+题目来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/reverse-linked-list/ 
         
      
