@@ -1,0 +1,36 @@
+题目要求：
+  反转一个单链表。
+
+  示例:
+
+  输入: 1->2->3->4->5->NULL
+  输出: 5->4->3->2->1->NULL
+  
+  
+  
+代码实现：
+  python方法1：（20191017）
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+#第一种解法
+
+class Solution:
+    def reverseList(self, head: ListNode) -> ListNode:
+        #head是一个链表的头指针，根据head可以依次找到整个链表的元素，所以head可以代表一个链表
+        cur = head       #将head赋值给cur，相当于对链表做了一个备份，cur也可以代表整个链表，他是备份链表的头指针
+        prev = None      #prev是cur的前驱节点，初始化的时候因为cur是头指针，无前驱节点，所以赋值为空
+        if (cur == None):       #若链表为空，头指针不指向任何节点，此时返回空值
+            return cur
+        while(cur):             #当cur不为空时，遍历链表中的每个节点，直到cur为空值，表示遍历完毕
+            temp=cur.next       #首先存下cur的原来的后继节点
+            cur.next=prev       #然后让cur的现在的后继节点变为原来的前驱节点
+            prev=cur            #然后prev和cur向下一个节点后移一位，直到循环结束，处理后的链表赋值给prev，所以prev是反转后的链表
+            cur=temp
+        return prev
+        
+        
+     
